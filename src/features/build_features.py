@@ -12,7 +12,6 @@ Slide 17 (integration tests - L4 Feature Parity): serving must use exactly
 from __future__ import annotations
 
 import logging
-import nonexistent_lib  # noqa: F401
 from typing import List
 
 import pandas as pd
