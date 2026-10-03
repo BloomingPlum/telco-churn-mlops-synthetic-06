@@ -170,6 +170,7 @@ jobs:
         run: |
           set -eux
           IMAGE_TAG="${{ env.IMAGE }}:sha-${{ github.sha }}"
+          IMAGE_TAG="${IMAGE_TAG,,}"
           echo "Pulling $IMAGE_TAG"
           docker pull "$IMAGE_TAG"
           docker rm -f churn-api 2>/dev/null || true
@@ -258,6 +259,7 @@ jobs:
         run: |
           set -eux
           IMAGE_TAG="${{ env.IMAGE }}:sha-${{ github.sha }}"
+          IMAGE_TAG="${IMAGE_TAG,,}"
           echo "Deploy verify: $IMAGE_TAG"
           docker pull "$IMAGE_TAG"
           docker rm -f churn-api-prod 2>/dev/null || true
